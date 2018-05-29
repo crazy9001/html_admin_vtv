@@ -1,0 +1,685 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Công ty cổ phần công nghệ và truyền thông PINET việt Nam| Phần mềm quản lý bán hàng</title>
+    <meta name="author" content="Pinet.,JSC" />
+    <meta name="description" content="Phần mềm quản lý bán hàng công ty cổ phần công nghệ và truyền thông pinet việt nam" />
+    <meta name="keywords" content="phần mềm, quản lý, bán hàng" />
+    <meta name="application-name" content="Phần mềm quản lý bán hàng" />
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Le styles -->
+    <!-- Use new way for google web fonts 
+    http://www.smashingmagazine.com/2012/07/11/avoiding-faux-weights-styles-google-web-fonts -->
+    <!-- Headings -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' />  -->
+    <!-- Text -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' /> --> 
+    <!--[if lt IE 9]>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Core stylesheets do not remove -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/supr-theme/jquery.ui.supr.css" rel="stylesheet" type="text/css"/>
+    <link href="css/icons.css" rel="stylesheet" type="text/css" />
+
+    <!-- Plugins stylesheets -->
+    <link href="plugins/misc/qtip/jquery.qtip.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/misc/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/misc/search/tipuesearch.css" type="text/css" rel="stylesheet" />
+
+    <link href="plugins/forms/uniform/uniform.default.css" type="text/css" rel="stylesheet" />
+    
+           
+    <link href="plugins/tables/dataTables/jquery.dataTables.css" type="text/css" rel="stylesheet" />
+    
+    <link href="plugins/forms/inputlimiter/jquery.inputlimiter.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/forms/togglebutton/toggle-buttons.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/forms/uniform/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/forms/color-picker/color-picker.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/forms/select/select2.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/forms/validate/validate.css" type="text/css" rel="stylesheet" />
+    <link href="plugins/forms/smartWizzard/smart_wizard.css" type="text/css" rel="stylesheet" />
+
+    <!-- Main stylesheets -->
+    <link href="css/main.css" rel="stylesheet" type="text/css" /> 
+
+    <!-- Custom stylesheets ( Put your own changes here ) -->
+    <link href="css/custom.css" rel="stylesheet" type="text/css" /> 
+    
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-57-precomposed.png" />
+    
+    <script type="text/javascript">
+        //adding load class to body and hide page
+        document.documentElement.className += 'loadstate';
+    </script>
+
+    </head>
+      
+    <body>
+    <!-- loading animation -->
+    <div id="qLoverlay"></div>
+    <div id="qLbar"></div>
+        
+    <div id="header">
+
+        <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container-fluid">
+                <a class="brand" href="dashboard.html">PINET.,<span class="slogan">Jsc</span></a>
+                <div class="nav-no-collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="dashboard.html"><span class="icon16 icomoon-icon-screen-2"></span> Quản lý</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon16 icomoon-icon-cog"></span> Cài đặt
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="menu">
+                                    <ul>
+                                        <li>                                                    
+                                            <a href="#"><span class="icon16 icomoon-icon-equalizer"></span>Cấu hình hệ thống</a>
+                                        </li>
+                                        <li>                                                    
+                                            <a href="#"><span class="icon16 icomoon-icon-wrench"></span>Cập nhật</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="icon16 icomoon-icon-picture-2"></span>Thiết lập người dùng</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon16 icomoon-icon-mail-3"></span>Tin nhắn <span class="notification">8</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="menu">
+                                    <ul class="messages">    
+                                        <li class="header"><strong>Tin nhắn</strong> (10) Tin nhắn</li>
+                                        <li>
+                                           <span class="icon"><span class="icon16 icomoon-icon-user-3"></span></span>
+                                            <span class="name"><a data-toggle="modal" href="#myModal1"><strong>Anh tuấn</strong></a><span class="time">35 phút trước</span></span>
+                                            <span class="msg">Tao vừa update thông tin rồi đó ...</span>
+                                        </li>
+                                        <li>
+                                           <span class="icon avatar"><img src="images/avatar.jpg" alt="" /></span>
+                                            <span class="name"><a data-toggle="modal" href="#myModal1"><strong>Mr. Pi</strong></a><span class="time">1 tiếng trước</span></span>
+                                            <span class="msg">Anh em đi cafe đi  ...</span>
+                                        </li>
+                                        <li>
+                                            <span class="icon"><span class="icon16 icomoon-icon-mail-3"></span></span>
+                                            <span class="name"><a data-toggle="modal" href="#myModal1"><strong>Mr. Dương</strong></a><span class="time">1 ngày trước</span></span>
+                                            <span class="msg">Cuối tuần đi nhậu ...</span>
+                                        </li>
+                                        <li class="view-all"><a href="#">Xem tất cả <span class="icon16 icomoon-icon-arrow-right-8"></span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                  
+                    <ul class="nav pull-right usernav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon16 icomoon-icon-bell-2"></span><span class="notification">3</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="menu">
+                                    <ul class="notif">
+                                        <li class="header"><strong>Thông báo</strong> (3)</li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="icon"><span class="icon16 icomoon-icon-user-3"></span></span>
+                                                <span class="event">1 Đơn hàng</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="icon"><span class="icon16 icomoon-icon-comments-4"></span></span>
+                                                <span class="event">2 Đơn hàng trả lại</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="icon"><span class="icon16 icomoon-icon-new-2"></span></span>
+                                                <span class="event">Vừa nhập kho 5 sản phẩm</span>
+                                            </a>
+                                        </li>
+                                        <li class="view-all"><a href="#">Xem thêm <span class="icon16 icomoon-icon-arrow-right-8"></span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
+                                <img src="images/avatar.jpg" alt="" class="image" /> 
+                                <span class="txt">admin@pinet.com.vn</span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="menu">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><span class="icon16 icomoon-icon-user-3"></span>Thay đổi thông tin</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="icon16 icomoon-icon-comments-2"></span>Gửi tin nhắn</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="icon16 icomoon-icon-plus-2"></span>Thông báo</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html"><span class="icon16 icomoon-icon-exit"></span> Thoát</a></li>
+                    </ul>
+                </div><!-- /.nav-collapse -->
+              </div>
+            </div><!-- /navbar-inner -->
+          </div><!-- /navbar --> 
+
+    </div><!-- End #header -->
+
+    <div id="wrapper">
+
+        <!--Responsive navigation button-->  
+        <div class="resBtn">
+            <a href="#"><span class="icon16 minia-icon-list-3"></span></a>
+        </div>
+        
+        <!--Left Sidebar collapse button-->  
+        <div class="collapseBtn leftbar">
+             <a href="#" class="tipR" title="Hide Left Sidebar"><span class="icon12 minia-icon-layout"></span></a>
+        </div>
+
+        <!--Sidebar background-->
+        <div id="sidebarbg"></div>
+        <!--Sidebar content-->
+        <div id="sidebar">
+
+            <div class="shortcuts">
+                <ul>
+                    <li><a href="support.html" title="Trợ giúp" class="tip"><span class="icon24 icomoon-icon-support"></span></a></li>
+                    <li><a href="#" title="Database backup" class="tip"><span class="icon24 icomoon-icon-database"></span></a></li>
+                    <li><a href="charts.html" title="Thống kê" class="tip"><span class="icon24 icomoon-icon-pie-2"></span></a></li>
+                    <li><a href="#" title="Nhập dữ liệu" class="tip"><span class="icon24 icomoon-icon-pencil"></span></a></li>
+                </ul>
+            </div><!-- End search -->            
+
+            <div class="sidenav">
+
+                <div class="sidebar-widget" style="margin: -1px 0 0 0;">
+                    <h5 class="title" style="margin-bottom:0">Nghiệp vụ</h5>
+                </div><!-- End .sidenav-widget -->
+
+                <div class="mainnav">
+                    <ul>
+                        <li>
+                        	<a href="charts.html"><span class="icon16  icomoon-icon-printer-3"></span>Báo giá</a>
+                        	<ul class="sub">
+                                <li><a href="tables.html"><span class="icon16 icomoon-icon-pencil"></span>Tạo mới</a></li>
+                                <li><a href="data-table.html"><span class="icon16 icomoon-icon-license"></span>Danh sách</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href="charts.html"><span class="icon16  icomoon-icon-cart-2"></span>Đơn đặt hàng</a>
+                        	<ul class="sub">
+                                <li><a href="tables.html"><span class="icon16 icomoon-icon-pencil"></span>Tạo mới</a></li>
+                                <li><a href="data-table.html"><span class="icon16 icomoon-icon-license"></span>Danh sách</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#"><span class="icon16 icomoon-icon-cart-4"></span>Bán hàng chưa thu</a>
+                            <ul class="sub">
+                                <li><a href="tables.html"><span class="icon16 icomoon-icon-pencil"></span>Tạo mới</a></li>
+                                <li><a href="data-table.html"><span class="icon16 icomoon-icon-license"></span>Danh sách</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#"><span class="icon16  icomoon-icon-power"></span>Thu tiền khách hàng</a>
+                            <ul class="sub">
+                                <li><a href="tables.html"><span class="icon16 icomoon-icon-pencil"></span>Tạo mới</a></li>
+                                <li><a href="data-table.html"><span class="icon16 icomoon-icon-license"></span>Danh sách</a></li>
+                            </ul>
+                        </li>
+                        
+                         <li>
+                            <a href="#"><span class="icon16  icomoon-icon-basket"></span>Thu tiền ngay</a>
+                            <ul class="sub">
+                                <li><a href="tables.html"><span class="icon16 icomoon-icon-pencil"></span>Tạo mới</a></li>
+                                <li><a href="data-table.html"><span class="icon16 icomoon-icon-license"></span>Danh sách</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- End sidenav -->
+			<div class="sidebar-widget" style="margin: -1px 0 0 0;">
+                    <h5 class="title" style="margin-bottom:0">Báo cáo</h5>
+            </div><!-- End .sidenav-widget -->
+            <div class="mainnav">
+                <ul>
+                     <li>
+                        <a href="#"><span class="icon16  icomoon-icon-power-2"></span>Báo cáo nhanh</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="icon16  icomoon-icon-briefcase-3"></span>Báo cáo doanh thu</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="icon16  icomoon-icon-puzzle"></span>Tổng hợp công nợ</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="icon16  icomoon-icon-list-view"></span>Thông báo công nợ</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="icon16  icomoon-icon-grid-view"></span>Báo cáo thu chi</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="icon16  icomoon-icon-books"></span>Sổ cái</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-widget" style="margin: -1px 0 0 0;">
+                    <h5 class="title" style="margin-bottom:0">Dữ liệu </h5>
+            </div><!-- End .sidenav-widget -->
+            <div class="mainnav">
+                <ul>
+                     <li>
+                        <a href="#"><span class="icon16  icomoon-icon-disk"></span>Tài khoản</a>
+                        <ul class="sub">
+                        	<li><a href="#"><span class="icon16  icomoon-icon-cube"></span>Hệ thống tài khoản</a></li>
+                            <li><a href="#"><span class="icon16  icomoon-icon-cube-2"></span>Nhóm tài khoản</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span class="icon16  icomoon-icon-users"></span>Nhân viên</a>
+                        <ul class="sub">
+                            <li><a href="tables.html"><span class="icon16 icomoon-icon-pencil"></span>Tạo mới</a></li>
+                            <li><a href="data-table.html"><span class="icon16 icomoon-icon-license"></span>Danh sách</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span class="icon16  icomoon-icon-user-4"></span>Khách hàng / Nhà CC</a>
+                        <ul class="sub">
+                            <li><a href="tables.html"><span class="icon16 icomoon-icon-pencil"></span>Tạo mới</a></li>
+                            <li><a href="data-table.html"><span class="icon16 icomoon-icon-license"></span>Danh sách</a></li>
+                            <li><a href="data-table.html"><span class="icon16 icomoon-icon-globe"></span>Nhóm KH / Nhà CC</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span class="icon16  icomoon-icon-home"></span>Kho hàng hóa</a>
+                        <ul class="sub">
+                            <li><a href="tables.html"><span class="icon16 icomoon-icon-pencil"></span>Tạo mới</a></li>
+                            <li><a href="data-table.html"><span class="icon16 icomoon-icon-license"></span>Danh sách</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span class="icon16  icomoon-icon-grid-view"></span>Hàng hóa vật tư</a>
+                        <ul class="sub">
+                            <li><a href="tables.html"><span class="icon16 icomoon-icon-pencil"></span>Tạo mới</a></li>
+                            <li><a href="data-table.html"><span class="icon16 icomoon-icon-license"></span>Danh sách</a></li>
+                            <li><a href="data-table.html"><span class="icon16 icomoon-icon-shield"></span>Nhóm hàng</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span class="icon16  icomoon-icon-books"></span>Sổ cái</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-widget">
+                <h5 class="title">Hoàng hóa trong kho</h5>
+                <div class="content">
+                    <span class="icon16 icomoon-icon-loop left"></span>
+                    <div class="progress progress-mini progress-danger left tip" title="87%">
+                      <div class="bar" style="width: 87%;"></div>
+                    </div>
+                    <span class="percent">87%</span>
+                    <div class="stat">19419.94 / 12000 MB</div>
+                </div>
+
+            </div><!-- End .sidenav-widget -->
+
+            <div class="sidebar-widget">
+                <h5 class="title">Hàng bán trả lại</h5>
+                <div class="content">
+                    <span class="icon16 icomoon-icon-drive left"></span>
+                    <div class="progress progress-mini progress-success left tip" title="16%">
+                      <div class="bar" style="width: 16%;"></div>
+                    </div>
+                    <span class="percent">16%</span>
+                    <div class="stat">304.44 / 8000 MB</div>
+                </div>
+
+            </div><!-- End .sidenav-widget -->
+
+            <div class="sidebar-widget">
+                <h5 class="title">Thống kê trang tháng</h5>
+                <div class="content">
+                    
+                    <div class="stats">
+                        <div class="item">
+                            <div class="head clearfix">
+                                <div class="txt">Doanh thu</div>
+                            </div>
+                            <span class="icon16 icomoon-icon-eye left"></span>
+                            <div class="number">21,501</div>
+                            <div class="change">
+                                <span class="icon24 icomoon-icon-arrow-up-2 green"></span>
+                                5%
+                            </div>
+                            <span id="stat1" class="spark"></span>
+                        </div>
+                        <div class="item">
+                            <div class="head clearfix">
+                                <div class="txt">Lãi xuất</div>
+                            </div>
+                            <span class="icon16 icomoon-icon-thumbs-up left"></span>
+                            <div class="number">308</div>
+                            <div class="change">
+                                <span class="icon24 icomoon-icon-arrow-down-2 red"></span>
+                                8%
+                            </div>
+                            <span id="stat2" class="spark"></span>
+                        </div>
+                        <div class="item">
+                            <div class="head clearfix">
+                                <div class="txt">Nhập kho</div>
+                            </div>
+                            <span class="icon16 icomoon-icon-heart left"></span>
+                            <div class="number">4%</div>
+                            <div class="change">
+                                <span class="icon24 icomoon-icon-arrow-down-2 red"></span>
+                                1%
+                            </div>
+                            <span id="stat3" class="spark"></span>
+                        </div>
+                        <div class="item">
+                            <div class="head clearfix">
+                                <div class="txt">Xuất</div>
+                            </div>
+                            <span class="icon16 icomoon-icon-coin left"></span>
+                            <div class="number">$376</div>
+                            <div class="change">
+                                <span class="icon24 icomoon-icon-arrow-up-2 green"></span>
+                                26%
+                            </div>
+                            <span id="stat4" class="spark"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div><!-- End .sidenav-widget -->
+
+            <div class="sidebar-widget">
+                <h5 class="title">Hôm nay</h5>
+                <div class="content">
+                    <div class="rightnow">
+                        <ul class="unstyled">
+                            <li><span class="number">34</span><span class="icon16 icomoon-icon-new-2"></span>Đơn hàng</li>
+                            <li><span class="number">7</span><span class="icon16 icomoon-icon-file"></span>Xuất kho</li>
+                            <li><span class="number">14</span><span class="icon16 icomoon-icon-list-view"></span>Nhập kho</li>
+                            <li><span class="number">201</span><span class="icon16 icomoon-icon-tag"></span>Khách hàng</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div><!-- End .sidenav-widget -->
+
+        </div><!-- End #sidebar -->
+
+        <!--Body content-->
+        <div id="content" class="clearfix">
+            <div class="contentwrapper"><!--Content wrapper-->
+
+                <div class="heading">
+
+                    <h3>Báo giá</h3>                    
+
+                    <div class="resBtnSearch">
+                        <a href="#"><span class="icon16 icomoon-icon-search-3"></span></a>
+                    </div>
+
+                    <div class="search">
+
+                        <form id="searchform" action="search.html">
+                            <input type="text" id="tipue_search_input" class="top-search" placeholder="Search here ..." />
+                            <input type="submit" id="tipue_search_button" class="search-btn" value=""/>
+                        </form>
+                
+                    </div><!-- End search -->
+                    
+                    <ul class="breadcrumb">
+                        <li>You are here:</li>
+                        <li>
+                            <a href="#" class="tip" title="back to dashboard">
+                                <span class="icon16 icomoon-icon-screen-2"></span>
+                            </a> 
+                            <span class="divider">
+                                <span class="icon16 icomoon-icon-arrow-right-2"></span>
+                            </span>
+                        </li>
+                        <li class="active">Data tables</li>
+                    </ul>
+
+                </div><!-- End .heading-->
+    				
+                <!-- Build page from here: Usual with <div class="row-fluid"></div> -->
+
+                    <div class="row-fluid">
+
+                        <div class="span12">
+
+                            <div class="box gradient">
+
+                                <div class="title">
+                                    <h4>
+                                        <span class=" icon16 icomoon-icon-bars"></span><span>Báo cáo sổ chi tiết doanh thu</span></h4>
+                                   </div>
+                                <div class="content noPad clearfix">
+                                    <table cellpadding="0" cellspacing="0" border="0" class="responsive dynamicTable display table table-bordered" id="checkAll" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th class="ch" id="masterCh"><input type="checkbox" name="checkbox" value="all" class="styled" /></th>
+                                                <th>Số chứng từ</th>
+                                                <th>Ngày lập</th>
+                                                <th>Diễn giải</th>
+                                                <th>TK đối ứng</th>
+                                                <th>Phát sinh bên Nợ</th>
+                                                <th>Phát sinh bên có</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="odd gradeX">
+                                            	<td class="chChildren"><input type="checkbox" name="checkbox" value="1" class="styled" /></td>
+                                                <td>HD001</td>
+                                                <td>02/01/2013</td>
+                                                <td>Bán Hàng Cho công ty TNHH Thành Nam</td>
+                                                <td class="center"> 131</td>
+                                                <td class="center">0</td>
+                                                <td>
+                                                   12.700.000 VNĐ
+                                            	</td>
+                                            </tr>
+                                            <tr class="odd gradeX">
+                                            	<td class="chChildren"><input type="checkbox" name="checkbox" value="1" class="styled" /></td>
+                                                <td>HD001</td>
+                                                <td>12/01/2013</td>
+                                                <td>Bán Hàng Cho công ty NAM khánh</td>
+                                                <td class="center"> 131</td>
+                                                <td class="center">0</td>
+                                                <td>
+                                                   700.000 VNĐ
+                                            	</td>
+                                            </tr>
+                                            <tr class="odd gradeX">
+                                            	<td class="chChildren"><input type="checkbox" name="checkbox" value="1" class="styled" /></td>
+                                                <td>HD003</td>
+                                                <td>02/02/2013</td>
+                                                <td>Bán Hàng Cho công ty TNHH Thành Nam</td>
+                                                <td class="center"> 131</td>
+                                                <td class="center">0</td>
+                                                <td>
+                                                   2.700.000 VNĐ
+                                            	</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                            	<th></th>
+                                                <th>Số chứng từ</th>
+                                                <th>Ngày lập</th>
+                                                <th>Diễn giải</th>
+                                                <th>TK đối ứng</th>
+                                                <th>Phát sinh bên Nợ</th>
+                                                <th>Phát sinh bên có</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+
+                            </div><!-- End .box -->
+
+                        </div><!-- End .span12 -->
+
+                    </div><!-- End .row-fluid -->
+               
+    			<!-- Page end here -->
+    				
+                <div class="modal fade hide" id="myModal1">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span class="icon12 minia-icon-close"></span></button>
+                        <h3>Chat layout</h3>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="messages">
+                            <li class="user clearfix">
+                                <a href="#" class="avatar">
+                                    <img src="images/avatar2.jpeg" alt="" />
+                                </a>
+                                <div class="message">
+                                    <div class="head clearfix">
+                                        <span class="name"><strong>Lazar</strong> says:</span>
+                                        <span class="time">25 seconds ago</span>
+                                    </div>
+                                    <p>
+                                        Time to go i call you tomorrow.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="admin clearfix">
+                                <a href="#" class="avatar">
+                                    <img src="images/avatar3.jpeg" alt="" />
+                                </a>
+                                <div class="message">
+                                    <div class="head clearfix">
+                                        <span class="name"><strong>Sugge</strong> says:</span>
+                                        <span class="time">just now</span>
+                                    </div>
+                                    <p>
+                                        OK, have a nice day.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="sendMsg">
+                                <form class="form-horizontal" action="#">
+                                    <textarea class="elastic" id="textarea" rows="1" placeholder="Enter your message ..." style="width:98%;"></textarea>
+                                    <button type="submit" class="btn btn-info marginT10">Send message</button>
+                                </form>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+                
+            </div><!-- End contentwrapper -->
+        </div>
+        <!-- End #content -->
+    
+    </div><!-- End #wrapper -->
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Important plugins put in all pages -->
+    <script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>  
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+
+    <!-- Charts plugins -->
+    <script type="text/javascript" src="plugins/charts/flot/jquery.flot.js"></script>
+    <script type="text/javascript" src="plugins/charts/flot/jquery.flot.grow.js"></script>
+    <script type="text/javascript" src="plugins/charts/flot/jquery.flot.pie.js"></script>
+    <script type="text/javascript" src="plugins/charts/flot/jquery.flot.resize.js"></script>
+    <script type="text/javascript" src="plugins/charts/flot/jquery.flot.tooltip_0.4.4.js"></script>
+    <script type="text/javascript" src="plugins/charts/flot/jquery.flot.orderBars.js"></script>
+    <script type="text/javascript" src="plugins/charts/sparkline/jquery.sparkline.min.js"></script><!-- Sparkline plugin -->
+    <script type="text/javascript" src="plugins/charts/knob/jquery.knob.js"></script><!-- Circular sliders and stats -->
+
+    <!-- Misc plugins -->
+    <script type="text/javascript" src="plugins/misc/fullcalendar/fullcalendar.min.js"></script><!-- Calendar plugin -->
+    <script type="text/javascript" src="plugins/misc/qtip/jquery.qtip.min.js"></script><!-- Custom tooltip plugin -->
+    <script type="text/javascript" src="plugins/misc/totop/jquery.ui.totop.min.js"></script> <!-- Back to top plugin -->
+    
+    <!-- Search plugin -->
+    <script type="text/javascript" src="plugins/misc/search/tipuesearch_set.js"></script>
+    <script type="text/javascript" src="plugins/misc/search/tipuesearch_data.js"></script><!-- JSON for searched results -->
+    <script type="text/javascript" src="plugins/misc/search/tipuesearch.js"></script>
+
+    <!-- Form plugins -->
+    <script type="text/javascript" src="plugins/forms/watermark/jquery.watermark.min.js"></script>
+    <script type="text/javascript" src="plugins/forms/uniform/jquery.uniform.min.js"></script>
+    
+    <!-- Fix plugins -->
+    <script type="text/javascript" src="plugins/fix/ios-fix/ios-orientationchange-fix.js"></script>
+
+    <!-- Important Place before main.js  -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="plugins/fix/touch-punch/jquery.ui.touch-punch.min.js"></script><!-- Unable touch for JQueryUI -->
+
+    <!-- Init plugins -->
+    <script type="text/javascript" src="js/main.js"></script><!-- Core js functions -->
+    <script type="text/javascript" src="js/dashboard.js"></script><!-- Init plugins only for page -->
+	
+    <script type="text/javascript" src="plugins/misc/nicescroll/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="plugins/tables/dataTables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/datatable.js"></script>
+    <script type="text/javascript" src="js/tables.js"></script>
+    <script type="text/javascript" src="js/formsFix.js"></script>
+    <script type="text/javascript" src="plugins/forms/maskedinput/jquery.maskedinput-1.3.min.js"></script>
+    <script type="text/javascript" src="plugins/forms/select/select2.min.js"></script>
+    
+    
+    
+    </body>
+</html>

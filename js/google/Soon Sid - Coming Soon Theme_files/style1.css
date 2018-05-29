@@ -1,0 +1,159 @@
+/* Table of Contents:
+
+	1. Typography
+	2. Generic
+	3. Content Layout
+		3.1 Countdown Dashboard & Progress Bar
+		3.2 Email and Subscribe field
+		3.3 Twitter Update List
+		3.4 Top Icon
+	4. Footer Layout
+	5. Styles for Mobile Version
+	
+*/
+
+
+
+
+
+
+body, input, textarea {
+	background: url(../img/style1/bg.gif) #000;
+	color: #FFF;
+}
+
+
+
+/* ****** 2. GENERIC ****** */
+
+a {
+	color: #fede00;
+}
+
+
+
+/* ****** 3. CONTENT LAYOUT ****** */
+
+
+#content {
+	background: url(../img/style1/content_bg.png);
+	border: 1px #252525 solid;
+}
+
+
+.logo a {
+	background:url(../img/style1/logo.png) center no-repeat;
+}
+
+
+
+/* ****** 3.1 Countdown Dashboard ****** */
+
+
+#countdown_dashboard .dash {
+	background: url(../img/style1/dash_bg.png) no-repeat top;
+}
+
+#countdown_dashboard .digit {
+	color: #675a00;
+}
+
+#countdown_dashboard .dash_light {
+	background: url(../img/style1/dash_light.png) 0px 2px no-repeat;
+}
+
+
+#progress_bar {
+	background-color: #000;
+	border: 1px #2b2b2b solid;
+}
+
+#progress_bar #p_bar_pbText {
+	color: #675a00;
+}
+
+/* ****** 3.2 Email and Subscribe field  ****** */
+
+
+#subscribe_button {
+	background: url(../img/style1/submit_butt.png) no-repeat top;
+	color: #675a00;
+}
+
+#subscribe_button:hover {
+	background: url(../img/style1/submit_butt.png) no-repeat bottom;
+	color: #948100;
+}
+
+#email_field {
+	background: url(../img/style1/email_field_bg.png) no-repeat left top;
+	color: #999;
+}
+
+
+/* ****** 3.3 Twitter Update List ****** */
+
+
+#tweets_new {
+	background: url(../img/style1/tweets_bg.png) no-repeat center top;
+}
+
+#tweets_new .follow_butt {
+	background: url(../img/style1/follow_butt.png) no-repeat top;
+}
+
+#tweets_new .follow_butt a {
+	color: #675a00;
+}
+
+#tweets_new .follow_butt a:hover {
+	background: url(../img/style1/follow_butt.png) no-repeat bottom;
+	color: #948100;
+}
+
+
+/* ****** 3.4 Top Icon ****** */
+
+#top_icon.subs {
+	background: url(../img/style1/icons.png) bottom no-repeat;
+}
+
+#top_icon.subs:hover {
+	background: url(../img/style1/icons_hover.png) bottom no-repeat;
+}
+
+#top_icon.fb {
+	background: url(../img/style1/icons.png) center no-repeat;
+}
+
+#top_icon.fb:hover {
+	background: url(../img/style1/icons_hover.png) center no-repeat;
+}
+
+#top_icon.twitter {
+	background: url(../img/style1/icons.png) top no-repeat;
+}
+
+#top_icon.twitter:hover {
+	background: url(../img/style1/icons_hover.png) top no-repeat;
+}
+
+
+/* ****** 5. STYLES FOR MOBILE VERSION ****** */
+
+#tweets_new.tweets_new_mobile {
+	background: url(../img/style1/tweets_bg_mob.png) no-repeat center top;
+}
+
+#email_field.email_field_mob {
+	background: url(../img/style1/email_field_bg_mob.png) no-repeat left top;
+}
+
+#subscribe_button.subscribe_button_mob {
+	background: url(../img/style1/submit_butt_mob.png) no-repeat top;
+}
+
+#subscribe_button.subscribe_button_mob:hover {
+	background: url(../img/style1/submit_butt_mob.png) no-repeat bottom;
+}
+
