@@ -5,9 +5,8 @@
     <title>Title</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="css/load-styles.css" rel="stylesheet" type="text/css"/>
+    <link href="css/dropzone.min.css" rel="stylesheet" type="text/css"/>
     <style>
         .media-router .nav-tabs {
             border: none;
@@ -40,24 +39,6 @@
 <button id="showMedia">
     Media
 </button>
-<script>
-    var w = $(window).width() - 20;
-    var h = $(window).height() - 20;
-    var opt = {
-        autoOpen: false,
-        modal: true,
-        width: w,
-        height: h,
-    };
-
-    $(document).ready(function () {
-        //$('#dialog').dialog();
-        $('#showMedia').click(function () {
-            $('#__media_upload').dialog(opt).dialog('open');
-            return false;
-        });
-    });
-</script>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#__mediaUploadFile">
     Launch demo modal
@@ -96,24 +77,47 @@
                         </ul>
                     </div>
                 </div>
-                <div class="media-frame-content" data-columns="9">
+                <div class="media-frame-content tab-content" data-columns="9">
 
                     <div class="uploader-inline tab-pane fade in active" id="media-uploader-inline">
                         <div class="uploader-inline-content no-upload-message">
                             <div class="upload-ui">
-                                <h2 class="upload-instructions drop-instructions">
+                                <!--<h2 class="upload-instructions drop-instructions">
                                     Kéo thả các các file vào bất kì nơi nào trên trang này để tải lên.
                                 </h2>
                                 <p class="upload-instructions drop-instructions">hoặc</p>
                                 <a href="#" class="browser button button-hero"
                                    style="display: inline; position: relative; z-index: 1;" id="__wp-uploader-id-1">
                                     Chọn tập tin
-                                </a>
+                                </a>-->
+                                <form action="file-upload.php" class="dropzone files-container" id="drop-zone-upload">
+                                    <div class="fallback">
+                                        <input name="file" type="file" multiple/>
+                                    </div>
+                                </form>
                             </div>
 
                             <div class="upload-inline-status">
                                 <div class="media-uploader-status">
-                                    <h2>Đang tải lên</h2>
+
+                                    <div class="preview-container dz-preview uploaded-files">
+                                        <div id="previews">
+                                            <div id="onyx-dropzone-template">
+                                                <div class="actions">
+                                                    <a href="#!" data-dz-remove><i class="fa fa-times"></i></a>
+                                                </div>
+                                                <div class="onyx-dropzone-info" data-dz-thumbnail>
+                                                    <div>
+                                                        <span data-dz-name></span> <span data-dz-size></span>
+                                                    </div>
+                                                    <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
+                                                    <div class="dz-error-message"><span data-dz-errormessage></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--<h2>Đang tải lên</h2>
                                     <button type="button" class="button-link upload-dismiss-errors"><span
                                             class="screen-reader-text">Bỏ qua lỗi</span>
                                     </button>
@@ -127,7 +131,7 @@
                                         <span class="upload-detail-separator">–</span>
                                         <span class="upload-filename"></span>
                                     </div>
-                                    <div class="upload-errors"></div>
+                                    <div class="upload-errors"></div>-->
                                 </div>
                             </div>
 
@@ -185,11 +189,10 @@
                             <li tabindex="0" role="checkbox"
                                 aria-label="Ít Nhưng Dài Lâu (Remix Version 2) - Yan Nguyễn [Audio Official]"
                                 aria-checked="false" data-id="233" class="attachment save-ready">
-                                <div class="attachment-preview js&#45;&#45;select-attachment type-video subtype-mp4 landscape">
+                                <div class="attachment-preview type-video subtype-mp4 landscape">
                                     <div class="thumbnail">
                                         <div class="centered">
-                                            <img src="http://dienmaycuonglinh.com/wp-includes/images/media/video.png"
-                                                 class="icon" draggable="false" alt="">
+                                            <img src="http://dienmaycuonglinh.com/wp-includes/images/media/video.png" class="icon" draggable="false" alt="">
                                         </div>
                                         <div class="filename">
                                             <div>Ít-Nhưng-Dài-Lâu-Remix-Version-2-Yan-Nguyễn-Audio-Official-1.mp4</div>
@@ -197,7 +200,7 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class="button-link check" tabindex="-1">
+                                <button type="button" class="button-link check" tabindex="0">
                                     <span class="media-modal-icon"></span>
                                     <span class="screen-reader-text">Bỏ chọn</span>
                                 </button>
@@ -347,7 +350,7 @@
                                 <div class="upload-errors"></div>
                             </div>
 
-                            <div tabindex="0" data-id="184" class="attachment-details save-ready">
+                            <!--<div tabindex="0" data-id="184" class="attachment-details save-ready">
                                 <h2>
                                     Chi tiết đính kèm <span class="settings-save-status">
                                         <span class="spinner"></span>
@@ -439,10 +442,11 @@
                                     </select>
                                 </label>
 
-                            </div>
+                            </div>-->
 
                         </div>
                     </div>
+
                 </div>
                 <div class="media-frame-toolbar">
                     <div class="media-toolbar">
@@ -484,5 +488,12 @@
         </div>
     </div>
 </div>
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/dropzone.min.js"></script>
+<!--<script src="js/dropzone-example.js"></script>-->
+<script src="js/media.js"></script>
 </body>
 </html>
