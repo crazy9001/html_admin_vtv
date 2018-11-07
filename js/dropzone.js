@@ -13,6 +13,9 @@ if ($("#mediaZoneUpload").length > 0) {
         parallelChunkUploads: false,
         dictDefaultMessage : 'Chọn file upload !',
         dictFileTooBig: "File quá lớn, file tối đa : {{maxFilesize}} MB.",
+        success: function(file, response){
+            console.log(response);
+        }
     });
 
 };

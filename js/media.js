@@ -120,24 +120,4 @@ $(document).ready(function () {
         $('.media-sidebar').html(html);
         $('button.media-button-insert').prop("disabled", false)
     });
-
-    if ($("#__mediaZoneUpload").length > 0) {
-        var token = $('input[name=_token]').val();
-
-        // A quick way setup
-        var myDropzone = new Dropzone("#__mediaZoneUpload", {
-            // Setup chunking
-            chunking: true,
-            method: "POST",
-            maxFilesize: 1024,
-            chunkSize: 256000,
-            // If true, the individual chunks of a file are being uploaded simultaneously.
-            parallelChunkUploads: true
-        });
-
-        // Append token to the request - required for web routes
-        myDropzone.on('sending', function (file, xhr, formData) {
-            formData.append("_token", token);
-        })
-    }
 });
