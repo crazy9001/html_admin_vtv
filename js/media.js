@@ -120,4 +120,16 @@ $(document).ready(function () {
         $('.media-sidebar').html(html);
         $('button.media-button-insert').prop("disabled", false)
     });
+
+    /*$('.tabs').bind('change', function (e) {
+        var now_tab = e.target // activated tab
+
+        // get the div's id
+        var divid = $(now_tab).attr('href').substr(1);
+
+        $.getJSON('xxx.php').success(function(data){
+            $("#"+divid).text(data.msg);
+        });
+    })*/
+
 });

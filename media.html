@@ -11,25 +11,30 @@
         .media-router .nav-tabs {
             border: none;
         }
-        .media-router .nav-tabs>li>a {
+
+        .media-router .nav-tabs > li > a {
             border: none;
             background: unset;
             border-radius: 0px;
         }
-        .media-router .nav-tabs>li>a:not(.active):hover, .media-router .nav-tabs>li>a:not(.active):focus{
+
+        .media-router .nav-tabs > li > a:not(.active):hover, .media-router .nav-tabs > li > a:not(.active):focus {
             -webkit-box-shadow: unset;
             box-shadow: unset;
         }
-        .media-router .nav-tabs>li.active>a:hover, .media-router .nav-tabs>li.active>a:focus {
+
+        .media-router .nav-tabs > li.active > a:hover, .media-router .nav-tabs > li.active > a:focus {
             border: none;
             outline: none;
             border-radius: 0px;
             -webkit-box-shadow: unset;
             box-shadow: unset;
         }
+
         .media-router li.active {
             margin: -3px -1px 0;
         }
+
         .media-sidebar label {
             font-weight: unset;
         }
@@ -68,12 +73,18 @@
                 <div class="media-frame-router">
                     <div class="media-router">
                         <ul class="nav nav-tabs">
-                        <li class="active">
-                            <a data-toggle="tab" href="#media-uploader-inline" class="media-menu-item" >Tải tập tin lên</a>
-                        </li>
-                        <li>
-                            <a data-toggle="tab" href="#media-attachments-browser" class="media-menu-item" >Thư viện nội dung đa phương tiện</a>
-                        </li>
+                            <li class="active">
+                                <a data-toggle="tab" href="#media-uploader-inline" class="media-menu-item">Tải tập tin
+                                    lên</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#media-attachments-image" class="media-menu-item">Thư viện
+                                    nội dung ảnh</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#media-attachments-video" class="media-menu-item">Thư viện
+                                    nội dung video</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -91,11 +102,12 @@
                         </div>
                     </div>
 
-                    <div class="attachments-browser tab-pane fade" id="media-attachments-browser">
+                    <div class="attachments-browser tab-pane fade" id="media-attachments-image">
                         <div class="media-toolbar">
                             <div class="media-toolbar-secondary">
-                                <label for="media-attachment-filters" class="screen-reader-text"> Lọc theo loại</label>
-                                <select id="media-attachment-filters" class="attachment-filters">
+                                <label for="media-attachment-filters-image" class="screen-reader-text"> Lọc theo
+                                    loại</label>
+                                <select id="media-attachment-filters-image" class="attachment-filters">
                                     <option value="all">Tất cả</option>
                                     <option value="uploaded">Uploaded to this product</option>
                                     <option value="image">Hình ảnh</option>
@@ -103,8 +115,9 @@
                                     <option value="video">Video</option>
                                     <option value="unattached">Chưa được đính kèm</option>
                                 </select>
-                                <label for="media-attachment-date-filters" class="screen-reader-text">Lọc theo ngày</label>
-                                <select id="media-attachment-date-filters" class="attachment-filters">
+                                <label for="media-attachment-date-filters-image" class="screen-reader-text">Lọc theo
+                                    ngày</label>
+                                <select id="media-attachment-date-filters-image" class="attachment-filters">
                                     <option value="all">Tất cả các ngày</option>
                                     <option value="0">Tháng Mười 2018</option>
                                     <option value="1">Tháng Chín 2016</option>
@@ -112,36 +125,22 @@
                                 <span class="spinner"></span>
                             </div>
                             <div class="media-toolbar-primary search-form">
-                                <label for="media-search-input" class="screen-reader-text"> Tìm trong đa phương tiện </label>
-                                <input type="search" placeholder="Tìm kiếm" id="media-search-input" class="search">
+                                <label for="media-search-input" class="screen-reader-text"> Tìm trong đa phương
+                                    tiện </label>
+                                <input type="search" placeholder="Tìm kiếm" id="media-search-image-input"
+                                       class="search">
                             </div>
                         </div>
-                        <div class="uploader-inline hidden">
-                            <div class="uploader-inline-content has-upload-message">
-                                <h2 class="upload-message">Không có mục nào được tìm thấy.</h2>
-                                <div class="upload-ui">
-                                    <h2 class="upload-instructions drop-instructions">
-                                        Kéo thả các các file vào bất kì nơi nào trên trang này để tải lên.
-                                    </h2>
-                                    <p class="upload-instructions drop-instructions">hoặc</p>
-                                    <a href="#" class="browser button button-hero" style="display: inline; position: relative; z-index: 1;" id="__wp-uploader-id-1">
-                                        Chọn tập tin
-                                    </a>
-                                </div>
-                                <div class="upload-inline-status"></div>
-                                <div class="post-upload-ui">
-                                    <p class="max-upload-size">Kích thước tập tin tải lên tối đa: 128 MB</p>
-                                </div>
-                            </div>
-                        </div>
-                        <ul tabindex="-1" class="attachments ui-sortable ui-sortable-disabled" id="__attachments-view-720">
+                        <ul tabindex="-1" class="attachments ui-sortable ui-sortable-disabled"
+                            id="__attachments-view-720">
                             <li tabindex="0" role="checkbox"
                                 aria-label="Ít Nhưng Dài Lâu (Remix Version 2) - Yan Nguyễn [Audio Official]"
                                 aria-checked="false" data-id="233" class="attachment save-ready">
                                 <div class="attachment-preview type-video subtype-mp4 landscape">
                                     <div class="thumbnail">
                                         <div class="centered">
-                                            <img src="http://dienmaycuonglinh.com/wp-includes/images/media/video.png" class="icon" draggable="false" alt="">
+                                            <img src="http://dienmaycuonglinh.com/wp-includes/images/media/video.png"
+                                                 class="icon" draggable="false" alt="">
                                         </div>
                                         <div class="filename">
                                             <div>Ít-Nhưng-Dài-Lâu-Remix-Version-2-Yan-Nguyễn-Audio-Official-1.mp4</div>
@@ -154,7 +153,8 @@
                                     <span class="screen-reader-text">Bỏ chọn</span>
                                 </button>
                             </li>
-                            <li tabindex="0" role="checkbox" aria-label="logo cuonglinh1" aria-checked="false" data-id="226"
+                            <li tabindex="0" role="checkbox" aria-label="logo cuonglinh1" aria-checked="false"
+                                data-id="226"
                                 class="attachment save-ready">
                                 <div class="attachment-preview js&#45;&#45;select-attachment type-image subtype-jpeg landscape">
                                     <div class="thumbnail">
@@ -171,24 +171,6 @@
                             </li>
                         </ul>
                         <div class="media-sidebar">
-
-                            <div class="media-uploader-status" style="display: none;">
-                                <h2>Đang tải lên</h2>
-                                <button type="button" class="button-link upload-dismiss-errors">
-                                    <span class="screen-reader-text">Bỏ qua lỗi</span>
-                                </button>
-                                <div class="media-progress-bar">
-                                    <div></div>
-                                </div>
-                                <div class="upload-details">
-                                    <span class="upload-count">
-                                        <span class="upload-index"></span> / <span class="upload-total"></span>
-                                    </span>
-                                    <span class="upload-detail-separator">–</span>
-                                    <span class="upload-filename"></span>
-                                </div>
-                                <div class="upload-errors"></div>
-                            </div>
                             <!--<div tabindex="0" data-id="184" class="attachment-details save-ready">
                                 <h2>
                                     Chi tiết đính kèm <span class="settings-save-status">
@@ -282,6 +264,95 @@
                             </div>-->
 
                         </div>
+                    </div>
+
+                    <div class="attachments-browser tab-pane fade" id="media-attachments-video">
+                        <div class="media-toolbar">
+                            <div class="media-toolbar-secondary">
+                                <label for="media-attachment-filters-video" class="screen-reader-text"> Lọc theo
+                                    loại</label>
+                                <select id="media-attachment-filters-video" class="attachment-filters">
+                                    <option value="all">Tất cả</option>
+                                    <option value="uploaded">Uploaded to this product</option>
+                                    <option value="image">Hình ảnh</option>
+                                    <option value="audio">Âm thanh</option>
+                                    <option value="video">Video</option>
+                                    <option value="unattached">Chưa được đính kèm</option>
+                                </select>
+                                <label for="media-attachment-date-filters-video" class="screen-reader-text">Lọc theo
+                                    ngày</label>
+                                <select id="media-attachment-date-filters-video" class="attachment-filters">
+                                    <option value="all">Tất cả các ngày</option>
+                                    <option value="0">Tháng Mười 2018</option>
+                                    <option value="1">Tháng Chín 2016</option>
+                                </select>
+                                <span class="spinner"></span>
+                            </div>
+                            <div class="media-toolbar-primary search-form">
+                                <label for="media-search-input" class="screen-reader-text"> Tìm trong đa phương
+                                    tiện </label>
+                                <input type="search" placeholder="Tìm kiếm" id="media-search-input" class="search">
+                            </div>
+                        </div>
+                        <div class="uploader-inline hidden">
+                            <div class="uploader-inline-content has-upload-message">
+                                <h2 class="upload-message">Không có mục nào được tìm thấy.</h2>
+                                <div class="upload-ui">
+                                    <h2 class="upload-instructions drop-instructions">
+                                        Kéo thả các các file vào bất kì nơi nào trên trang này để tải lên.
+                                    </h2>
+                                    <p class="upload-instructions drop-instructions">hoặc</p>
+                                    <a href="#" class="browser button button-hero"
+                                       style="display: inline; position: relative; z-index: 1;" id="__wp-uploader-id-1">
+                                        Chọn tập tin
+                                    </a>
+                                </div>
+                                <div class="upload-inline-status"></div>
+                                <div class="post-upload-ui">
+                                    <p class="max-upload-size">Kích thước tập tin tải lên tối đa: 128 MB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <ul tabindex="-1" class="attachments ui-sortable ui-sortable-disabled"
+                            id="__attachments-view-720">
+                            <li tabindex="0" role="checkbox"
+                                aria-label="Ít Nhưng Dài Lâu (Remix Version 2) - Yan Nguyễn [Audio Official]"
+                                aria-checked="false" data-id="233" class="attachment save-ready">
+                                <div class="attachment-preview type-video subtype-mp4 landscape">
+                                    <div class="thumbnail">
+                                        <div class="centered">
+                                            <img src="http://dienmaycuonglinh.com/wp-includes/images/media/video.png"
+                                                 class="icon" draggable="false" alt="">
+                                        </div>
+                                        <div class="filename">
+                                            <div>Ít-Nhưng-Dài-Lâu-Remix-Version-2-Yan-Nguyễn-Audio-Official-1.mp4</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="button-link check" tabindex="0">
+                                    <span class="media-modal-icon"></span>
+                                    <span class="screen-reader-text">Bỏ chọn</span>
+                                </button>
+                            </li>
+                            <li tabindex="0" role="checkbox" aria-label="logo cuonglinh1" aria-checked="false"
+                                data-id="226"
+                                class="attachment save-ready">
+                                <div class="attachment-preview js&#45;&#45;select-attachment type-image subtype-jpeg landscape">
+                                    <div class="thumbnail">
+                                        <div class="centered">
+                                            <img src="https://images.pexels.com/photos/417040/pexels-photo-417040.jpeg"
+                                                 draggable="false" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="button-link check" tabindex="-1">
+                                    <span class="media-modal-icon"></span>
+                                    <span class="screen-reader-text">Bỏ chọn</span>
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="media-sidebar"></div>
                     </div>
 
                 </div>

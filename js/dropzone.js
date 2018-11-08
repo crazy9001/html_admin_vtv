@@ -10,9 +10,13 @@ if ($("#mediaZoneUpload").length > 0) {
         maxFilesize: 2048,
         chunkSize: 2000000,
         // If true, the individual chunks of a file are being uploaded simultaneously.
-        parallelChunkUploads: false,
         dictDefaultMessage : 'Chọn file upload !',
         dictFileTooBig: "File quá lớn, file tối đa : {{maxFilesize}} MB.",
+        /*init: function() {
+            this.on("sending", function(file, xhr, formData){
+                formData.append("api_key", "qyFyrIv3vWBqZKPJQJuSC2winU8S6OFN");
+            });
+        },*/
         success: function(file, response){
             console.log(response);
         }
