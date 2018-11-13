@@ -3,8 +3,9 @@ var $ = window.$; // use the global jQuery instance
 if ($("#mediaZoneUpload").length > 0) {
     var mediaDropzone = new Dropzone("#mediaZoneUpload", {
         headers: {
-            'X-Authorization': '8bthZZPmTkbRmmBqbcDP3VeIaj0PMPt8MAHA83RlPPzBB25YNhS3WhAryiuB7J4O'
+            'X-Authorization': Media.SecretKey
         },
+        url: Media.ApiEndPoin + '/upload',
         // Setup chunking
         chunking: true,
         method: "POST",
@@ -19,6 +20,6 @@ if ($("#mediaZoneUpload").length > 0) {
     });
     // Append token to the request - required for web routes
     mediaDropzone.on('sending', function (file, xhr, formData) {
-        formData.append("user_id", 1);
+        formData.append("user", Media.User);
     });
 };
