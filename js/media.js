@@ -11,8 +11,8 @@ var media_wrapper = $("#__attachments-view-720"), media_sidebar = $('.media-side
 Media.getSizeImageFromUrl = function(url){
     var tmpImg = new Image();
     tmpImg.src = url; //or  document.images[i].src;
-    orgWidth = tmpImg.width;
-    orgHeight = tmpImg.height;
+    var orgWidth = tmpImg.width;
+    var orgHeight = tmpImg.height;
     return orgWidth+"x"+orgHeight;
 },
 Media.bytesToSize = function(bytes) {
@@ -31,10 +31,10 @@ MediaSystem = {
                 if(xhr.status == 200){
                     var html = '';
                     $.each(data.files.data, function(index, file) {
-                        var thumbnail = '', typeArray =  file.mime_type.split('/'),
+                        var thumbnail = '', typeArray =  file.mime_type.split('/'),parseThumb = $.parseJSON(file.thumbnails);
                             file_name = '';
                         if (typeArray[0] == 'image') {
-                            thumbnail = '<img src="' + file.path + '" draggable="false" alt="' + file.name + '">' ;
+                            thumbnail = '<img src="' + parseThumb[140] + '" draggable="false" alt="' + file.name + '">' ;
                             file_name = '<div class="filename">' +
                                 '           <div>' + file.name + '</div>' +
                                 '       </div>';
@@ -50,6 +50,7 @@ MediaSystem = {
                                 '       data-size="' + file.size + '"' +
                                 '       data-path="' + file.path + '"' +
                                 '       data-name="' + file.name + '"' +
+                                '       data-thumb="' + parseThumb[320] + '"' +
                                 '       data-mime="' + typeArray[1] + '">' +
                                 '   <div class="attachment-preview js select-attachment type-image subtype-jpeg landscape">' +
                                 '       <div class="thumbnail">' +
@@ -95,7 +96,7 @@ MediaSystem = {
                 '                                </h2>' +
                 '                                <div class="attachment-info">' +
                 '                                    <div class="thumbnail thumbnail-image">' +
-                '                                        <img src="'+ $(this).find('.centered img').attr('src') +'"' +
+                '                                        <img src="'+ $(this).attr('data-thumb') +'"' +
                 '                                             draggable="false" alt="">' +
                 '                                    </div>' +
                 '                                    <div class="details">' +
