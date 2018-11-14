@@ -30,23 +30,27 @@ MediaSystem = {
             success: function (data, textStatus, xhr) {
                 if(xhr.status == 200){
                     var html = '';
-                    $.each(data.files, function(index, file) {
+                    $.each(data.files.data, function(index, file) {
                         var thumbnail = '', typeArray =  file.mime_type.split('/'),
                             file_name = '';
                         if (typeArray[0] == 'image') {
-                            thumbnail = '<img src="' + file.path + '" draggable="false" alt="' + file.file_name + '">' ;
+                            thumbnail = '<img src="' + file.path + '" draggable="false" alt="' + file.name + '">' ;
+                            file_name = '<div class="filename">' +
+                                '           <div>' + file.name + '</div>' +
+                                '       </div>';
                         }else if(typeArray[0] == 'video'){
                             thumbnail = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi4ynKraQDOVJJVTtnKK_k6j5vLBwPzL-JtZ5ecSSDc_xGUehn">' ;
                             file_name = '<div class="filename">' +
-                                '           <div>' + file.file_name + '</div>' +
+                                '           <div>' + file.name + '</div>' +
                                 '       </div>';
                         };
-                        html += '<li tabindex="0" role="checkbox" aria-label="' + file.file_name + '" aria-checked="false" data-action="attach" ' +
+                        html += '<li tabindex="0" role="checkbox" aria-label="' + file.name + '" aria-checked="false" data-action="attach" ' +
                                 '       data-id="' + file.id + '" class="attachment save-ready" ' +
                                 '       data-uploaded="'+ file.created_at +'"' +
                                 '       data-size="' + file.size + '"' +
                                 '       data-path="' + file.path + '"' +
-                                '       data-name="' + file.file_name + '">' +
+                                '       data-name="' + file.name + '"' +
+                                '       data-mime="' + typeArray[1] + '">' +
                                 '   <div class="attachment-preview js select-attachment type-image subtype-jpeg landscape">' +
                                 '       <div class="thumbnail">' +
                                 '           <div class="centered">' + thumbnail + '</div>' +
@@ -95,17 +99,10 @@ MediaSystem = {
                 '                                             draggable="false" alt="">' +
                 '                                    </div>' +
                 '                                    <div class="details">' +
-                '                                        <div class="filename">'+ $(this).attr('data-name') +'</div>' +
-                '                                        <div class="uploaded">'+ $(this).attr('data-uploaded') +'</div>' +
-                '                                        <div class="file-size">'+ Media.bytesToSize($(this).attr('data-size')) +'</div>' +
-                '                                        <div class="dimensions">'+ Media.getSizeImageFromUrl($(this).attr('data-path')) +'</div>' +
-                '                                        <a class="edit-attachment"' +
-                '                                           href="#"' +
-                '                                           target="_blank">Sửa ảnh</a>' +
-                '                                        <button type="button" class="button-link delete-attachment">Xóa vĩnh viễn' +
-                '                                        </button>' +
-                '                                        <div class="compat-meta">' +
-                '                                        </div>' +
+                '                                        <div class="dimensions media-view-info"><i class="fa fa-clone"></i>'+ Media.getSizeImageFromUrl($(this).attr('data-path')) +'</div>' +
+                '                                        <div class="file-size media-view-info"><i class="fa fa-info"></i>'+ Media.bytesToSize($(this).attr('data-size')) +'</div>' +
+                '                                        <div class="uploaded media-view-info"><i class="fa fa-clock-o"></i>'+ $(this).attr('data-uploaded') +'</div>' +
+                '                                        <div class="uploaded media-view-info"><i class="fa fa-file"></i>'+ $(this).attr('data-mime') +'</div>' +
                 '                                    </div>' +
                 '                                </div>' +
                 '                                <label class="setting" data-setting="url">' +
