@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2f7cb38f-13bf-48b1-88a2-b029786b1170" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/load-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/load-styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/media.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/media.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/media.html" beforeDir="false" afterPath="$PROJECT_DIR$/media.html" afterDir="false" />
     </list>
@@ -21,6 +22,7 @@
           <entry key="project.open.time.131" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.41" value="1" />
@@ -28,7 +30,7 @@
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.61" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -36,7 +38,7 @@
           <entry key="css" value="8" />
           <entry key="htaccess" value="1" />
           <entry key="html" value="2" />
-          <entry key="js" value="15" />
+          <entry key="js" value="16" />
           <entry key="log" value="2" />
           <entry key="php" value="2" />
           <entry key="png" value="1" />
@@ -48,7 +50,7 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="2" />
           <entry key="Image" value="1" />
-          <entry key="JavaScript" value="15" />
+          <entry key="JavaScript" value="16" />
           <entry key="PHP" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="TypeScript" value="1" />
@@ -57,27 +59,39 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="65" />
-          <entry key="html" value="1933" />
-          <entry key="js" value="2699" />
+          <entry key="css" value="88" />
+          <entry key="html" value="2018" />
+          <entry key="js" value="2997" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="65" />
-          <entry key="HTML" value="1937" />
-          <entry key="JavaScript" value="2695" />
+          <entry key="CSS" value="88" />
+          <entry key="HTML" value="2023" />
+          <entry key="JavaScript" value="2992" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/media.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="52" column="79" lean-forward="true" selection-start-line="52" selection-start-column="79" selection-end-line="52" selection-end-column="79" />
+            <state relative-caret-position="459">
+              <caret line="45" column="75" selection-start-line="45" selection-start-column="75" selection-end-line="45" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/media.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,17 +99,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/load-styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
-              <caret line="19360" selection-start-line="19360" selection-end-line="19360" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/media.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4896">
-              <caret line="288" column="6" lean-forward="true" selection-start-line="288" selection-start-column="6" selection-end-line="288" selection-end-column="6" />
+            <state relative-caret-position="60027">
+              <caret line="3531" column="145" selection-start-line="3531" selection-start-column="136" selection-end-line="3531" selection-end-column="145" />
+              <folding>
+                <element signature="e#143#35028#1" expanded="true" />
+                <element signature="e#63576#63661#2" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/dropzone.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8313">
-              <caret line="489" selection-start-line="489" selection-end-line="489" />
+            <state relative-caret-position="13243">
+              <caret line="779" selection-start-line="779" selection-end-line="782" />
             </state>
           </provider>
         </entry>
@@ -145,12 +154,13 @@
       <find>.uploader-inline-content .upload-ui</find>
       <find>localhost:63342</find>
       <find>\n</find>
-      <find>spinner</find>
       <find>spinner.gif</find>
       <find>.attachment-info .thumbnail</find>
-      <find>.media-sidebar</find>
       <find>.attachment-info .filename</find>
       <find>media-view-info</find>
+      <find>.media-sidebar</find>
+      <find>.spinner</find>
+      <find>spinner</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -186,10 +196,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1176" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -207,7 +217,12 @@
             <path>
               <item name="html_admin_vtv" type="b2602c69:ProjectViewProjectNode" />
               <item name="html_admin_vtv" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="html_admin_vtv" type="b2602c69:ProjectViewProjectNode" />
+              <item name="html_admin_vtv" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -217,19 +232,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../APIUpload" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/laravel-stream" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Source\html_admin_vtv\plugins\slimscroll" />
+      <recent name="D:\Source\html_admin_vtv\css" />
+      <recent name="D:\Source\html_admin_vtv\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Source\html_admin_vtv\js" />
       <recent name="D:\Source\html_admin_vtv\plugins" />
       <recent name="D:\Source\html_admin_vtv\css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Source\html_admin_vtv\css" />
-      <recent name="D:\Source\html_admin_vtv\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -269,18 +285,19 @@
       <workItem from="1542076957348" duration="21460000" />
       <workItem from="1542164802249" duration="6492000" />
       <workItem from="1542205253104" duration="4508000" />
+      <workItem from="1542273547380" duration="1282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110204000" />
+    <option name="totallyTimeSpent" value="121898000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14392324" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14712153" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="0" weight="0.32917467" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.30422264" />
@@ -362,10 +379,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/slimscroll/jquery.slimscroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2091" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/media.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="45" column="75" selection-start-line="45" selection-start-column="75" selection-end-line="45" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/load-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60027">
+          <caret line="3531" column="145" selection-start-line="3531" selection-start-column="136" selection-end-line="3531" selection-end-column="145" />
+          <folding>
+            <element signature="e#143#35028#1" expanded="true" />
+            <element signature="e#63576#63661#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/dropzone.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8313">
-          <caret line="489" selection-start-line="489" selection-end-line="489" />
+        <state relative-caret-position="13243">
+          <caret line="779" selection-start-line="779" selection-end-line="782" />
         </state>
       </provider>
     </entry>
@@ -381,22 +421,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/media.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4896">
-          <caret line="288" column="6" lean-forward="true" selection-start-line="288" selection-start-column="6" selection-end-line="288" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/load-styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="19360" selection-start-line="19360" selection-end-line="19360" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/media.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="52" column="79" lean-forward="true" selection-start-line="52" selection-start-column="79" selection-end-line="52" selection-end-column="79" />
+        <state relative-caret-position="382">
+          <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
