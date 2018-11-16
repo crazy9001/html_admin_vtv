@@ -2,7 +2,7 @@ var Media = Media || {};
 Media.SecretKey = '8bthZZPmTkbRmmBqbcDP3VeIaj0PMPt8MAHA83RlPPzBB25YNhS3WhAryiuB7J4O';
 Media.ApiEndPoin = 'http://localhost:9000/api';
 Media.Storage = 'http://localhost:9000/storage';
-Media.User = 1;
+Media.User = 2;
 $.ajaxSetup({
     headers: {'X-Authorization': Media.SecretKey}
 });
@@ -27,7 +27,7 @@ MediaSystem = {
         $.ajax({
             url: Media.ApiEndPoin + '/media/gallery',
             type: "GET",
-            data: {user: 1, action: e},
+            data: {user: Media.User, action: e},
             beforeSend: function() {
                 $('.media-toolbar .spinner').addClass('is-active')
             },
@@ -38,17 +38,19 @@ MediaSystem = {
                 if(xhr.status == 200){
                     var html = '';
                     $.each(data.files.data, function(index, file) {
-                        console.log(file);
                         var thumbnail = '', typeArray =  file.mime_type.split('/'),
-                            file_name = '';
+                            file_name = '', class_preview = '';
                         if (typeArray[0] == 'image') {
-                            file_name = '<div class="filename">' +
+                            /*file_name = '<div class="filename">' +
                                 '           <div>' + file.name + '</div>' +
-                                '       </div>';
+                                '       </div>';*/
+                            class_preview = 'attachment-preview js-select-attachment type-image subtype-jpeg landscape'
+
                         }else if(typeArray[0] == 'video'){
                             file_name = '<div class="filename">' +
                                 '           <div>' + file.name + '</div>' +
                                 '       </div>';
+                            class_preview = 'attachment-preview type-video subtype-mp4 landscape';
                         };
                         html += '<li tabindex="0" role="checkbox" aria-label="' + file.name + '" aria-checked="false" data-action="attach" ' +
                                 '       data-id="' + file.id + '" class="attachment save-ready" ' +
@@ -58,7 +60,7 @@ MediaSystem = {
                                 '       data-name="' + file.name + '"' +
                                 '       data-thumb-medium="' + Media.Storage + file.thumbnails.medium + '"' +
                                 '       data-mime="' + typeArray[1] + '">' +
-                                '   <div class="attachment-preview js select-attachment type-image subtype-jpeg landscape">' +
+                                '   <div class="'+ class_preview +'">' +
                                 '       <div class="thumbnail">' +
                                 '           <div class="centered"><img src="'+  Media.Storage + file.thumbnails.small +'"></div>' +
                                 '       </div>' + file_name +
