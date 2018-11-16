@@ -22,4 +22,11 @@ if ($("#mediaZoneUpload").length > 0) {
     mediaDropzone.on('sending', function (file, xhr, formData) {
         formData.append("user", Media.User);
     });
+    mediaDropzone.on("uploadprogress", function(file, progress, bytesSent) {
+        progress = bytesSent / file.size * 100;
+        $('.dz-upload').width(progress + "%");
+    });
+    mediaDropzone.on("complete", function(file) {
+        mediaDropzone.removeFile(file);
+    });
 };
