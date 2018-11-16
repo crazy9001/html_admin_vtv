@@ -2,12 +2,12 @@ var Media = Media || {};
 Media.SecretKey = '8bthZZPmTkbRmmBqbcDP3VeIaj0PMPt8MAHA83RlPPzBB25YNhS3WhAryiuB7J4O';
 Media.ApiEndPoin = 'http://localhost:9000/api';
 Media.Storage = 'http://localhost:9000/storage';
-Media.User = 2;
+Media.User = 1;
 $.ajaxSetup({
     headers: {'X-Authorization': Media.SecretKey}
 });
 
-var media_wrapper = $("#__attachments-view-720"), media_sidebar = $('#media-sidebar')
+var media_wrapper = $("#__attachments-view-720"), media_sidebar = $('#media-sidebar');
 
 Media.getSizeImageFromUrl = function(url){
     var tmpImg = new Image();
@@ -15,7 +15,7 @@ Media.getSizeImageFromUrl = function(url){
     var orgWidth = tmpImg.width;
     var orgHeight = tmpImg.height;
     return orgWidth+"x"+orgHeight;
-},
+}
 Media.bytesToSize = function(bytes) {
     var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
     if (bytes == 0) return '0 Byte';
@@ -38,14 +38,9 @@ MediaSystem = {
                 if(xhr.status == 200){
                     var html = '';
                     $.each(data.files.data, function(index, file) {
-                        var thumbnail = '', typeArray =  file.mime_type.split('/'),
-                            file_name = '', class_preview = '';
+                        var typeArray =  file.mime_type.split('/'), file_name = '', class_preview = '';
                         if (typeArray[0] == 'image') {
-                            /*file_name = '<div class="filename">' +
-                                '           <div>' + file.name + '</div>' +
-                                '       </div>';*/
                             class_preview = 'attachment-preview js-select-attachment type-image subtype-jpeg landscape'
-
                         }else if(typeArray[0] == 'video'){
                             file_name = '<div class="filename">' +
                                 '           <div>' + file.name + '</div>' +
@@ -59,6 +54,7 @@ MediaSystem = {
                                 '       data-path="' + Media.Storage + file.path + '"' +
                                 '       data-name="' + file.name + '"' +
                                 '       data-thumb-medium="' + Media.Storage + file.thumbnails.medium + '"' +
+                                '       data-mime-type="' + typeArray[0] + '"' +
                                 '       data-mime="' + typeArray[1] + '">' +
                                 '   <div class="'+ class_preview +'">' +
                                 '       <div class="thumbnail">' +
@@ -90,11 +86,23 @@ MediaSystem = {
             MediaSystem.refreshMedia(window.MediaGallery.action)
         }),
         $('#__attachments-view-720').on("click", "li", function (e) {
-            $(this).attr('aria-checked', true)
-            $(this).blur()
+            $(this).attr('aria-checked', true);
+            $(this).blur();
             $("#__attachments-view-720 li:not(this)").removeClass('details');
             $(this).toggleClass('details');
             $(this).find('button').css({'display': 'block'});
+            var mime_type = $(this).attr('data-mime-type'), thumb = '';
+            if(mime_type == 'video'){
+                thumb = '<div class="thumbnail thumbnail-video">' +
+                        '   <img src="'+ $(this).attr('data-thumb-medium') +'">' +
+                        '   <a class="media-play-button"></a>' +
+                        '   <div class="hidden-video-player"></div>' +
+                        '</div>'
+            }else if(mime_type == 'image') {
+                thumb = '<div class="thumbnail thumbnail-image">' +
+                        '   <img src="'+ $(this).attr('data-thumb-medium') +'">' +
+                        '</div>'
+            }
             var html = '<div id="attachment-details">' +
                 '           <div tabindex="0" data-id="184" class="attachment-details save-ready">' +
                 '                                <h2>' +
@@ -103,11 +111,7 @@ MediaSystem = {
                 '                                        <span class="saved">Đã lưu.</span>' +
                 '                                    </span>' +
                 '                                </h2>' +
-                '                                <div class="attachment-info">' +
-                '                                    <div class="thumbnail thumbnail-image">' +
-                '                                        <img src="'+ $(this).attr('data-thumb-medium') +'"' +
-                '                                             draggable="false" alt="">' +
-                '                                    </div>' +
+                '                                <div class="attachment-info">' + thumb +
                 '                                    <div class="details">' +
                 '                                        <div class="dimensions media-view-info"><i class="fa fa-clone"></i>'+ Media.getSizeImageFromUrl($(this).attr('data-path')) +'</div>' +
                 '                                        <div class="file-size media-view-info"><i class="fa fa-info"></i>'+ Media.bytesToSize($(this).attr('data-size')) +'</div>' +
@@ -182,14 +186,37 @@ MediaSystem = {
                 '                                </label>' +
                 '                            </div>' +
                 '         </div>';
-            html += '<script>$("#attachment-details").slimScroll({height: "auto"})</script>';
+
             media_sidebar.html(html);
-            $('button.media-button-insert').prop("disabled", false)
+            $('button.media-button-insert').prop("disabled", false);
+            $("#attachment-details").slimScroll({height: "auto"})
+        });
+        $(document).on('click', '.media-play-button', function () {
+            var mediaFileChecked = $('[aria-checked="true"]'), urlVideo = mediaFileChecked.attr('data-path'), thumbVideo = mediaFileChecked.attr('data-thumb-medium'),hiddenPlayer = $('.hidden-video-player'),
+                imgThumbVideo = $('.attachment-info > .thumbnail-video > img'), btnPlayHidden =  $('.attachment-info > .thumbnail-video > a.media-play-button'),
+            html = '<video src="'+ urlVideo +'" class="video-js vjs-default-skin" controls></video>'
+            imgThumbVideo.hide();
+            btnPlayHidden.hide();
+            hiddenPlayer.html(html);
+            hiddenPlayer.show();
+            var video = document.querySelector('video'),
+                player = videojs(video, {
+                    "preload": "auto",
+                    "autoplay": true,
+                    "height"    : 174,
+                    "poster": thumbVideo
+                });
+            /*player.simpleoverlay({
+                'vjs-sample-overlay': {
+                    start: 2,
+                    end: 10,
+                    textContent: 'Hello, world!'
+                }
+            });*/
         });
     }
 };
 $(document).ready(function () {
     window.MediaGallery = window.MediaGallery || {},
     MediaSystem.bindActionToElement()
-
 });
