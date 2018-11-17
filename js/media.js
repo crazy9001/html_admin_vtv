@@ -38,13 +38,15 @@ MediaSystem = {
                 if(xhr.status == 200){
                     var html = '';
                     $.each(data.files.data, function(index, file) {
-                        var typeArray =  file.mime_type.split('/'), file_name = '', class_preview = '';
+                        console.log(file);
+                        var typeArray =  file.mime_type.split('/'), file_name = '', class_preview = '', btn_play_video = '',
+                            thumbMedium = (file.thumbnails) ? Media.Storage + file.thumbnails.medium : 'https://arghaa.com/assets/images/default.png',
+                            thumbSmall = file.thumbnails ? Media.Storage + file.thumbnails.small : 'https://arghaa.com/assets/images/default.png';
                         if (typeArray[0] == 'image') {
                             class_preview = 'attachment-preview js-select-attachment type-image subtype-jpeg landscape'
                         }else if(typeArray[0] == 'video'){
-                            file_name = '<div class="filename">' +
-                                '           <div>' + file.name + '</div>' +
-                                '       </div>';
+                            file_name = '<div class="filename">' +  file.name + '</div>';
+                            btn_play_video= '<a class="media-play-button"></a>';
                             class_preview = 'attachment-preview type-video subtype-mp4 landscape';
                         };
                         html += '<li tabindex="0" role="checkbox" aria-label="' + file.name + '" aria-checked="false" data-action="attach" ' +
@@ -53,13 +55,13 @@ MediaSystem = {
                                 '       data-size="' + file.size + '"' +
                                 '       data-path="' + Media.Storage + file.path + '"' +
                                 '       data-name="' + file.name + '"' +
-                                '       data-thumb-medium="' + Media.Storage + file.thumbnails.medium + '"' +
+                                '       data-thumb-medium="' + thumbMedium + '"' +
                                 '       data-mime-type="' + typeArray[0] + '"' +
                                 '       data-mime="' + typeArray[1] + '">' +
                                 '   <div class="'+ class_preview +'">' +
                                 '       <div class="thumbnail">' +
-                                '           <div class="centered"><img src="'+  Media.Storage + file.thumbnails.small +'"></div>' +
-                                '       </div>' + file_name +
+                                '           <div class="centered"><img src="'+  thumbSmall +'"></div>' +
+                                '       </div>' + file_name + btn_play_video +
                                 '   </div>' +
                                 '   <button type="button" class="button-link check" tabindex="-1">' +
                                 '       <span class="media-modal-icon"></span>' +
@@ -117,6 +119,11 @@ MediaSystem = {
                 '                                        <div class="file-size media-view-info"><i class="fa fa-info"></i>'+ Media.bytesToSize($(this).attr('data-size')) +'</div>' +
                 '                                        <div class="uploaded media-view-info"><i class="fa fa-clock-o"></i>'+ $(this).attr('data-uploaded') +'</div>' +
                 '                                        <div class="uploaded media-view-info"><i class="fa fa-file"></i>'+ $(this).attr('data-mime') +'</div>' +
+                '                                    </div>' +
+                '                                    <div class="MediaVideoFunction">' +
+                '                                       <div id="MediaEditThumbVideo" class="MediaBtn BtnMedium"><i class="fa fa-photo"></i> Thay avatar</div>' +
+                '                                       <div id="MediaCutVideo" class="MediaBtn BtnMedium"><i class="fa fa-cut"></i> Cắt</div>' +
+                '                                       <div id="MediaVideoDownload" class="MediaBtn BtnMedium"><i class="fa fa-download"></i></i> Tải xuống</div>' +
                 '                                    </div>' +
                 '                                </div>' +
                 '                                <label class="setting" data-setting="url">' +
@@ -191,7 +198,7 @@ MediaSystem = {
             $('button.media-button-insert').prop("disabled", false);
             $("#attachment-details").slimScroll({height: "auto"})
         });
-        $(document).on('click', '.media-play-button', function () {
+        $(document).on('click', '.attachment-info .media-play-button', function () {
             var mediaFileChecked = $('[aria-checked="true"]'), urlVideo = mediaFileChecked.attr('data-path'), thumbVideo = mediaFileChecked.attr('data-thumb-medium'),hiddenPlayer = $('.hidden-video-player'),
                 imgThumbVideo = $('.attachment-info > .thumbnail-video > img'), btnPlayHidden =  $('.attachment-info > .thumbnail-video > a.media-play-button'),
             html = '<video src="'+ urlVideo +'" class="video-js vjs-default-skin" controls></video>'
@@ -204,7 +211,7 @@ MediaSystem = {
                     "preload": "auto",
                     "autoplay": true,
                     "height"    : 174,
-                    "poster": thumbVideo
+                    "poster": thumbVideo,
                 });
             /*player.simpleoverlay({
                 'vjs-sample-overlay': {

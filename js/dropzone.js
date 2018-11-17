@@ -12,7 +12,7 @@ if ($("#mediaZoneUpload").length > 0) {
         maxFilesize: 2048,
         chunkSize: 2000000,
         // If true, the individual chunks of a file are being uploaded simultaneously.
-        dictDefaultMessage : 'Chọn file upload !',
+        dictDefaultMessage : '<img src="http://www.screencast.com/img/library/graphic-upload-area.svg" style="max-width: 9rem;display: block;margin: auto auto .25rem;"><div class="uploader-active-text">Drag and drop files here</div>',
         dictFileTooBig: "File quá lớn, file tối đa : {{maxFilesize}} MB.",
         success: function(file, response){
             console.log(response);

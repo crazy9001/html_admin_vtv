@@ -778,7 +778,7 @@ body {
 }
 
 .dropzone {
-    border-style: dashed;
+    border: 2px dashed #3c7cb5;
 }
 
 .dropzone .dz-message {
