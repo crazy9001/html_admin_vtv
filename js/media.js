@@ -220,6 +220,18 @@ MediaSystem = {
                     textContent: 'Hello, world!'
                 }
             });*/
+            var playPromise = video.play();
+            console.log(playPromise);
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Automatic playback started!
+                    // Show playing UI.
+                    video.play();
+                }).catch(error => {
+                        // Auto-play was prevented
+                        // Show paused UI.
+                });
+            }
         });
     }
 };
