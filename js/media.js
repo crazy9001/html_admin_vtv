@@ -88,9 +88,11 @@ MediaSystem = {
             MediaSystem.refreshMedia(window.MediaGallery.action)
         }),
         $('#__attachments-view-720').on("click", "li", function (e) {
-            $(this).attr('aria-checked', true);
+
             $(this).blur();
             $("#__attachments-view-720 li:not(this)").removeClass('details');
+            $("#__attachments-view-720 li:not(this)").attr('aria-checked', false);
+            $(this).attr('aria-checked', true);
             $(this).toggleClass('details');
             $(this).find('button').css({'display': 'block'});
             var mime_type = $(this).attr('data-mime-type'), thumb = '';
@@ -220,18 +222,6 @@ MediaSystem = {
                     textContent: 'Hello, world!'
                 }
             });*/
-            var playPromise = video.play();
-            console.log(playPromise);
-            if (playPromise !== undefined) {
-                playPromise.then(_ => {
-                    // Automatic playback started!
-                    // Show playing UI.
-                    video.play();
-                }).catch(error => {
-                        // Auto-play was prevented
-                        // Show paused UI.
-                });
-            }
         });
     }
 };
