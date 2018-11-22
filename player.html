@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap3.3.7.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://vjs.zencdn.net/7.3.0/video-js.css" rel="stylesheet">
+    <link href="css/load-styles.css" rel="stylesheet" type="text/css"/>
+    <link href="css/dropzone.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div>
+    <video id="my-player" class="video-js vjs-default-skin" controls ></video>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<script src="js/bootstrap/bootstrap.3.3.7.min.js"></script>
+<script src="plugins/slimscroll/jquery.slimscroll.js"></script>
+<script src="plugins/dropzone/dropzone.js"></script>
+<script src="https://vjs.zencdn.net/7.3.0/video.js"></script>
+<script src="plugins/videojs/videojs-contrib-hls.js"></script>
+<script src="plugins/videojs/videojs.simpleoverlay.js"></script>
+<script src="js/media.js"></script>
+<script src="js/dropzone.js"></script>
+<script type="text/javascript">
+    var options = {
+        controls: true,
+    };
+    var player = videojs('my-player', options, function onPlayerReady() {
+        // In this context, `this` is the player that was created by Video.js.
+        this.play();
+        console.log(this)
+        videojs.log('Your player is ready!');
+        // How about an event listener?
+        this.on('ended', function() {
+            videojs.log('Awww...over so soon?!');
+        });
+    });
+    player.src('http://localhost:1935/vod/_definst_/mp4:media/gov/2018/11/21/public-4104bcbd2739823e6923596733ebf71d.mp4/playlist.m3u8');
+    player.type("application/x-mpegURL");
+</script>
+</body>
+</html>

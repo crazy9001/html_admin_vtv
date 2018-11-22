@@ -1,7 +1,8 @@
 var Media = Media || {};
 Media.SecretKey = '8bthZZPmTkbRmmBqbcDP3VeIaj0PMPt8MAHA83RlPPzBB25YNhS3WhAryiuB7J4O';
 Media.ApiEndPoin = 'http://localhost:9000/api';
-Media.Storage = 'http://localhost:9000/storage';
+Media.Storage = 'http://localhost:9000/storage/';
+Media.Hls = 'http://10.38.244.89:1935/vod/_definst_/mp4:';
 Media.User = 1;
 $.ajaxSetup({
     headers: {'X-Authorization': Media.SecretKey}
@@ -15,13 +16,29 @@ Media.getSizeImageFromUrl = function(url){
     var orgWidth = tmpImg.width;
     var orgHeight = tmpImg.height;
     return orgWidth+"x"+orgHeight;
-}
+};
 Media.bytesToSize = function(bytes) {
     var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
     if (bytes == 0) return '0 Byte';
     var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
     return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
-}
+};
+
+Media.generatePlayer = function(target, option) {
+
+    var player = videojs(target, option, function onPlayerReady() {
+        // In this context, `this` is the player that was created by Video.js.
+        this.play();
+        console.log(this)
+        videojs.log('Your player is ready!');
+        // How about an event listener?
+        this.on('ended', function() {
+            videojs.log('Awww...over so soon?!');
+        });
+    });
+    player.src(option.source.src);
+    //player.type(option.source.type);
+};
 MediaSystem = {
     refreshMedia: function(e) {
         $.ajax({
@@ -53,7 +70,7 @@ MediaSystem = {
                                 '       data-id="' + file.id + '" class="attachment save-ready" ' +
                                 '       data-uploaded="'+ file.created_at +'"' +
                                 '       data-size="' + file.size + '"' +
-                                '       data-path="' + Media.Storage + file.path + '"' +
+                                '       data-path="' + file.path + '"' +
                                 '       data-name="' + file.name + '"' +
                                 '       data-thumb-medium="' + thumbMedium + '"' +
                                 '       data-mime-type="' + typeArray[0] + '"' +
@@ -117,7 +134,7 @@ MediaSystem = {
                 '                                </h2>' +
                 '                                <div class="attachment-info">' + thumb +
                 '                                    <div class="details">' +
-                '                                        <div class="dimensions media-view-info"><i class="fa fa-clone"></i>'+ Media.getSizeImageFromUrl($(this).attr('data-path')) +'</div>' +
+               /* '                                        <div class="dimensions media-view-info"><i class="fa fa-clone"></i>'+ Media.getSizeImageFromUrl($(this).attr('data-path')) +'</div>' +*/
                 '                                        <div class="file-size media-view-info"><i class="fa fa-info"></i>'+ Media.bytesToSize($(this).attr('data-size')) +'</div>' +
                 '                                        <div class="uploaded media-view-info"><i class="fa fa-clock-o"></i>'+ $(this).attr('data-uploaded') +'</div>' +
                 '                                        <div class="uploaded media-view-info"><i class="fa fa-file"></i>'+ $(this).attr('data-mime') +'</div>' +
@@ -201,27 +218,31 @@ MediaSystem = {
             $("#attachment-details").slimScroll({height: "auto"})
         });
         $(document).on('click', '.attachment-info .media-play-button', function () {
-            var mediaFileChecked = $('[aria-checked="true"]'), urlVideo = mediaFileChecked.attr('data-path'), thumbVideo = mediaFileChecked.attr('data-thumb-medium'),hiddenPlayer = $('.hidden-video-player'),
+            var mediaFileChecked = $('[aria-checked="true"]'),urlVideo = mediaFileChecked.attr('data-path'), thumbVideo = mediaFileChecked.attr('data-thumb-medium'),hiddenPlayer = $('.hidden-video-player'),
                 imgThumbVideo = $('.attachment-info > .thumbnail-video > img'), btnPlayHidden =  $('.attachment-info > .thumbnail-video > a.media-play-button'),
-            html = '<video src="'+ urlVideo +'" class="video-js vjs-default-skin" controls></video>'
+            html = '<video id="my-player" class="video-js vjs-default-skin" controls ></video>'
             imgThumbVideo.hide();
             btnPlayHidden.hide();
             hiddenPlayer.html(html);
             hiddenPlayer.show();
-            var video = document.querySelector('video'),
-                player = videojs(video, {
-                    "preload": "auto",
-                    "autoplay": true,
-                    "height"    : 174,
-                    "poster": thumbVideo,
+            var objPlayer = videojs.getPlayers();
+            if(!$.isEmptyObject(objPlayer)) videojs('my-player').dispose();
+            var player = {};
+            var options = {
+                "controls": true,
+                "height": 174,
+                "preload": "none",
+                "autoplay": true,
+                "poster": thumbVideo,
+            };
+            player = videojs('my-player', options, function onPlayerReady() {
+                this.play();
+                videojs.log('Your player is ready!');
+                this.on('ended', function() {
+                    videojs.log('Awww...over so soon?!');
                 });
-            /*player.simpleoverlay({
-                'vjs-sample-overlay': {
-                    start: 2,
-                    end: 10,
-                    textContent: 'Hello, world!'
-                }
-            });*/
+            });
+            player.src(Media.Hls + urlVideo + '/playlist.m3u8');
         });
     }
 };
